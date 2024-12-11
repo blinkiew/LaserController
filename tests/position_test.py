@@ -14,7 +14,7 @@ def main():
         if frame is None:
             continue
 
-        # Process zone
+        # Update zone
         test_zone.update(frame)
 
         # Update debug window

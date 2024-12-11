@@ -17,7 +17,7 @@ class PreferencesManager:
         """
 
         if not zones:
-            warnings.warn("No zones to save.")
+            warnings.warn("No zones to save.", UserWarning)
             return
 
         # make a file structure

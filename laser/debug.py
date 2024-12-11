@@ -40,7 +40,7 @@ cv.putText(empty_frame, "Frame is None", (10, 32), cv.FONT_HERSHEY_SIMPLEX, 1, (
 
 
 class DebugWindow:
-    def __init__(self, zones: List[Zone], window_name:str='Laser Debug'):
+    def __init__(self, zones: Sequence[Zone], window_name:str='Laser Debug'):
         """
         Create a window for debugging input data or visualizing lasers.
         Left-click to open zone in separate window and see additional info (unwrapped frame, joystick info, etc.)
@@ -51,7 +51,7 @@ class DebugWindow:
 
         # zones & graphics
         self.frame: np.ndarray | None = None
-        self.zones: List[Zone] = zones
+        self.zones: List[Zone] = list(zones)
         self.opened_zones: ZoneDebugWindow | [] = []
         self.resize_multiplier: int = 1
 
